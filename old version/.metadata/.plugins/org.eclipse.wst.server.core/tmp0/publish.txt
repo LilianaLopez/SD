@@ -1,3 +1,0 @@
-#Tomcat publish data
-#Sat Jun 16 10:01:44 PYT 2018
-org.eclipse.jst.jee.server\:/binary\:D\:\\Proyecto-2017\\rep-20\\SD-Biblioteca-2017\\Biblioteca\\WebContent\\WEB-INF\\lib\\spring-web-3.2.0.RELEASE.jar=WEB-INF/lib/spring-web-3.2.0.RELEASE.jar

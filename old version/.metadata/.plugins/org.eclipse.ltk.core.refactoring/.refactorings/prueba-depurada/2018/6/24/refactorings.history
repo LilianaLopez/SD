@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;EntradaDetalleManager.java&apos; to &apos;prueba-depurada/src/entrada&apos;&#x0D;&#x0A;- Original project: &apos;prueba-depurada&apos;&#x0D;&#x0A;- Destination element: &apos;prueba-depurada/src/entrada&apos;&#x0D;&#x0A;- Original element: &apos;reserva.EntradaDetalleManager.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;entrada" element1="/src&lt;reserva{EntradaDetalleManager.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1529156673551" units="1" version="1.0"/>
-</session>
