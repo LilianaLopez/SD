@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,8 +34,8 @@
 	   				<div class="col-md-12">
 	   					<div id="searchbox"> 
 							<label>Buscar :
-		   						<g:remoteField  update="updateMe" id="searching" class="form-control"  name= "searching" paramName ="text" url="[action:'showResult', controller:'libro']"/>
-							</label>
+		   						%{--<g:remoteField  update="updateMe" id="searching" class="form-control"  name= "searching" paramName ="text" url="[action:'showResult', controller:'libro']"/>
+							--}%</label>
 						</div>
 					</div>	
 				<!--END BUSCAR -->

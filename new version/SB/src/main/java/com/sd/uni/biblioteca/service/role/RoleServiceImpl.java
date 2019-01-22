@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.sd.uni.biblioteca.rest.role.RoleResourceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -22,7 +23,7 @@ public class RoleServiceImpl extends BaseServiceImpl<RoleB, RoleDTO> implements
 		IRoleService {
 
 	@Autowired
-	private IRoleResource _roleResource;
+	private IRoleResource _roleResource = new RoleResourceImpl();
 
 	public RoleServiceImpl() {
 	}
@@ -30,8 +31,8 @@ public class RoleServiceImpl extends BaseServiceImpl<RoleB, RoleDTO> implements
 	
 
 	@Override
-	@CacheEvict(value="isp-client-web-cache", key="'role_getAll'")
-	@CachePut(value="isp-client-web-cache", key="'role_getById_'+#bean.getId()", condition="#bean.getId() != null")
+	//@CacheEvict(value="isp-client-web-cache", key="'role_getAll'")
+	//@CachePut(value="isp-client-web-cache", key="'role_getById_'+#bean.getId()", condition="#bean.getId() != null")
 	public RoleB save(RoleB bean) {
 		final RoleDTO dto = convertBeanToDto(bean);
 		final RoleDTO roleDTO = _roleResource.save(dto);
@@ -39,7 +40,7 @@ public class RoleServiceImpl extends BaseServiceImpl<RoleB, RoleDTO> implements
 	}
 
 	@Override
-	@Cacheable(value="isp-client-web-cache", key="'role_'+#root.methodName")
+	//@Cacheable(value="isp-client-web-cache", key="'role_'+#root.methodName")
 	public List<RoleB> getAll() {
 		final RoleResult result = _roleResource.getAll();
 		final List<RoleDTO> cList = null == result.getRoles() ? new ArrayList<RoleDTO>()
@@ -53,7 +54,7 @@ public class RoleServiceImpl extends BaseServiceImpl<RoleB, RoleDTO> implements
 	}
 
 	@Override
-	@Cacheable(value="isp-client-web-cache", key="'role_'+#root.methodName+'_'+#id")
+	//@Cacheable(value="isp-client-web-cache", key="'role_'+#root.methodName+'_'+#id")
 	public RoleB getById(Integer id) {
 		final RoleDTO dto = _roleResource.getById(id);
 		return convertDtoToBean(dto);

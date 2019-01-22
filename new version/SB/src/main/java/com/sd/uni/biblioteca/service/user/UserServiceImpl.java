@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.sd.uni.biblioteca.rest.user.UserResourceImpl;
+import com.sd.uni.biblioteca.service.role.RoleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -28,9 +30,9 @@ public class UserServiceImpl extends BaseServiceImpl<UserB, UserDTO> implements
 		IUserService {
 
 	@Autowired
-	private IUserResource _userResource;
+	private IUserResource _userResource = new UserResourceImpl();
 	@Autowired
-	private IRoleService _roleService;
+	private IRoleService _roleService = new RoleServiceImpl();
 
 	public UserServiceImpl() {
 	}

@@ -2,7 +2,7 @@
 grails:
     profile: web
     codegen:
-        defaultPackage: sb
+        defaultPackage: intento1
     spring:
         transactionManagement:
             proxies: false
@@ -134,41 +134,6 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
-
-grails.converters.encoding : "UTF-8"
-grails.scaffolding.templates.domainSuffix : 'Instance'
-grails.json.legacy.builder : false
-grails.enable.native2ascii : true
-grails.spring.bean.packages : ['com.sd.uni.biblioteca']
-grails.web.disable.multipart : false
-grails.exceptionresolver.params.exclude : ['password']
-grails.hibernate.cache.queries : false
-grails.hibernate.pass.readonly : false
-grails.hibernate.osiv.readonly : false
-grails.plugin.springsecurity.providerManager.eraseCredentialsAfterAuthentication : false
-grails.plugin.springsecurity:
-    controllerAnnotations:
-        staticRules :
-            - pattern: '/'
-              access: ['permitAll']
-            - pattern: '/index'
-              access: ['permitAll']
-            - pattern: '/index.gsp'
-              access: ['permitAll']
-            - pattern: '/assets/**'
-              access: ['permitAll']
-            - pattern: '/**/js/**'
-              access: ['permitAll']
-            - pattern: '/**/css/**'
-              access: ['permitAll']
-            - pattern: '/**/fonts/**'
-              access: ['permitAll']
-            - pattern: '/**/images/**'
-              access: ['permitAll']
-            - pattern: '/**/favicon.ico'
-              access: ['permitAll']
-
-    providerNames :  ['myAuthenticationProvider', 'anonymousAuthenticationProvider', 'rememberMeAuthenticationProvider']
 
 server:
     port: 9001

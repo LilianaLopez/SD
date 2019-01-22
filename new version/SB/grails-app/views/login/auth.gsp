@@ -42,9 +42,9 @@
 				</g:if>			
 		        
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" name='j_username' id='username' placeholder="Usuario" autofocus>
+		            <input type="text" class="form-control" name='username' id='username' placeholder="Usuario" autofocus>
 		            <br>
-		            <input type="password" class="form-control" placeholder="Contraseña" name='j_password' id='password'>
+		            <input type="password" class="form-control" placeholder="Contraseña" name='password' id='password'>
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> ¿Olvidaste tu contraseña?</a>

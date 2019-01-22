@@ -81,18 +81,18 @@
 					</div>	
 			
 		<!-- Bootstrap Core JavaScript -->
-    
-	<script src="${request.contextPath}/theme/assets/js/jquery.js"> </script>
-    <script src="${request.contextPath}/theme/assets/js/jquery-1.8.3.min.js"> </script>
-    <script src="${request.contextPath}/theme/assets/js/chart-master/Chart.js"></script>
-    <script src="${request.contextPath}/theme/assets/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="/assets/assets/js/jquery.js"> </script>
+    <script type="text/javascript" src="/assets/assets/js/jquery-1.8.3.min.js"> </script>
+    <script type="text/javascript" src="/assets/assets/js/chart-master/Chart.js"></script>
+    <script type="text/javascript" src="/assets/assets/js/bootstrap.min.js"></script>
 	
 <script type="text/javascript">
+
  $(document).ready(function() {
-	 
+
 	 $('.addEntrada').click(function(event){
 		 event.preventDefault();
-		 
 		 var allEntradas = $("#entradaDetallesListTableBody tr[rowId]");
 	 		var rowId = 0;			
 	 		

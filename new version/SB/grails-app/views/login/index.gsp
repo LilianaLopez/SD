@@ -20,7 +20,7 @@
 		      <g:form class="form-login" controller="login" action="auth">
 		        <h2 class="form-login-heading">Inicia Sesion</h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" placeholder="Nombre" autofocus name="nombre">
+		            <input type="text" class="form-control" placeholder="Nombre" autofocus name="username">
 		            <br>
 		            <input type="password" class="form-control" placeholder="Contraseña" name="password">
 			            <label>

@@ -51,9 +51,10 @@ public class AuthServiceImpl implements IAuthService {
 		Authentication au = SecurityContextHolder.getContext().getAuthentication();
 
 	    if (au.getPrincipal() instanceof UserDetails) {
-	        String password=((UserDetails) au.getPrincipal()).getPassword();
-	        
+	        String password= ((UserDetails) au.getPrincipal()).getPassword();
+			System.out.println("Principal: " +  ((UserDetails) au.getPrincipal()).getPassword());
 	        return password;
+
 	    } else {
 	    	return null;
 	        
