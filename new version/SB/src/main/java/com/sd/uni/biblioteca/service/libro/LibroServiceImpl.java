@@ -35,8 +35,8 @@ public class LibroServiceImpl extends BaseServiceImpl<LibroB, LibroDTO> implemen
 	}
 
 	@Override
-	@CacheEvict(value="biblioteca-platform-web-cache", key="'libro_'")
-	@CachePut(value="biblioteca-platform-web-cache", key="'libro_'+#bean.getId()", condition="#bean.getId() != null")
+	//@CacheEvict(value="biblioteca-platform-web-cache", key="'libro_'")
+	//@CachePut(value="biblioteca-platform-web-cache", key="'libro_'+#bean.getId()", condition="#bean.getId() != null")
 	public LibroB save(LibroB bean) {
 		final LibroDTO dto = convertBeanToDto(bean);
 		final LibroDTO libroDTO = _libroResource.save(dto);
@@ -44,7 +44,7 @@ public class LibroServiceImpl extends BaseServiceImpl<LibroB, LibroDTO> implemen
 	}
 
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'libro_'")	
+	//@Cacheable(value="biblioteca-platform-web-cache", key="'libro_'")
 	public List<LibroB> find(String textToFind, int page, int maxItems) {
 		final LibroResult result = _libroResource.find(textToFind, page, maxItems);
 		final List<LibroDTO> uList = null == result.getLibros() ? new ArrayList<LibroDTO>() : result.getLibros();
@@ -58,7 +58,7 @@ public class LibroServiceImpl extends BaseServiceImpl<LibroB, LibroDTO> implemen
 	}
 	
 		@Override
-		@Cacheable(value="biblioteca-platform-web-cache", key="'libro_'")	
+		//@Cacheable(value="biblioteca-platform-web-cache", key="'libro_'")
 		public List<LibroB> find(int page, int maxItems) {
 			final LibroResult result = _libroResource.find(page, maxItems);
 			final List<LibroDTO> uList = null == result.getLibros() ? new ArrayList<LibroDTO>() : result.getLibros();
@@ -72,7 +72,7 @@ public class LibroServiceImpl extends BaseServiceImpl<LibroB, LibroDTO> implemen
 		}
 
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'libro_'")	
+	//@Cacheable(value="biblioteca-platform-web-cache", key="'libro_'")
 	public List<LibroB> getAll() {
 		final LibroResult result = _libroResource.getAll();
 		final List<LibroDTO> uList = null == result.getLibros() ? new ArrayList<LibroDTO>() : result.getLibros();
@@ -86,7 +86,7 @@ public class LibroServiceImpl extends BaseServiceImpl<LibroB, LibroDTO> implemen
 	}
 
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'libro_' +#id")
+	//@Cacheable(value="biblioteca-platform-web-cache", key="'libro_' +#id")
 	public LibroB getById(Integer id) {
 		final LibroDTO dto = _libroResource.getById(id);
 		return convertDtoToBean(dto);

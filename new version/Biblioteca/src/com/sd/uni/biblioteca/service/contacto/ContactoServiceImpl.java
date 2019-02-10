@@ -48,12 +48,16 @@ public class ContactoServiceImpl extends BaseServiceImpl<ContactoDto, ContactoDo
 			final ContactoDomain contactoDomain = convertDtoToDomain(dto);
 			final ContactoDomain contacto = _contactoDao.save(contactoDomain);
 			final ContactoDto nuevodto = convertDomainToDto(contacto);
+			System.out.println("\n\n\n\n\n\n\n\n");
+			
 			//try {
 				enviar(nuevodto);
 			//} catch (BibliotecaException e) {
 				// 
 				//e.printStackTrace();
 			//}
+				
+				System.out.println("\n\n\n\n\n\n\n\n");
 		return nuevodto;
 		} catch(Exception ex) { 
 			 logger.error(ex);
@@ -123,7 +127,7 @@ public class ContactoServiceImpl extends BaseServiceImpl<ContactoDto, ContactoDo
 	}
 	
 	
-	public ContactoDto enviar(ContactoDto dto){
+	public ContactoDto enviar(ContactoDto dto) throws BibliotecaException{
 		System.out.println("Enviando Contacto - mensaje: " + dto.getMensaje());
 		System.out.println("Enviando Contacto - cliente: " + dto.getNombre());
 
@@ -137,12 +141,14 @@ public class ContactoServiceImpl extends BaseServiceImpl<ContactoDto, ContactoDo
 		Session session = Session.getInstance(props,
 				new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(nombre_usuario, contrasena);
+				return new PasswordAuthentication("bibliotecadistri@gmail.com",  "BiiiB2018");
 			}
 		});
 		
+		
+		
 		try {
-			String text = "<!DOCTYPE html><html lang=\"es\"><head><title>Bootstrap Example</title>"
+			String text = "<!DOCTYPE html><html lang=\"es\"><head><title>Mensaje externo</title>"
 					+ "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
 					+ "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
 					+ "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>"
@@ -155,26 +161,27 @@ public class ContactoServiceImpl extends BaseServiceImpl<ContactoDto, ContactoDo
 					+ "</div>"
 					+ "<div class=\"container grey-color\">"
 				  	+ "<div class=\"row\"><div class=\"span12\"><div class=\"hero-unit center\">"
-				    + "<br><br><h1>La Casona Restaurant - Contacto de clientes</h1><br/>"
-				    + "<p>El cliente <b>" + dto.getNombre() + " " + dto.getApellido() + "</b> ha realizado la siguiente consulta:"
+				    + "<br><br><h1>Biblioteca pública - Mensaje externo</h1><br/>"
+				    + "<p> Usuario <b>" + dto.getNombre() + " " + dto.getApellido() + "</b> envía el siguiente mensaje :"
 				    + "<div class=\"container white-color center\">"
 					+ "<blockquote><br><p>\"" + dto.getMensaje() + "\"</p>"
-				    + "<span class=\"label label-warning\"><span class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></span><small>  No supervisamos las respuestas a este correo. </small></span>"
+				    + "<span class=\"label label-warning\"><span class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></span><small> Mensaje externo </small></span>"
 				    + "<br></div></div><br/></div></body></html>";
 			
 			System.out.println("Enviando mail de contacto...");
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress(nombre_usuario));
-			InternetAddress[] mailTo = {
+			message.setFrom(new InternetAddress("bibliotecadistri@gmail.com"));
+			/*InternetAddress[] mailTo = {
 					new InternetAddress("lilianalopez0710@gmail.com")
-			};
-			message.setRecipients(Message.RecipientType.TO, mailTo);
+			};*/
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("bibliotecadistri@gmail.com"));
 			
-			//message.setSubject("Contacto" + dto.getCorreo());
+			message.setSubject("Contacto" + dto.getCorreo());
 			message.setContent(text, "text/html; charset=utf-8");
 			Transport.send(message);
 
 		} catch (MessagingException e) {
+			throw new BibliotecaException("Envio de mensaje fallido", e);
 		} 
 		return dto;
 	}

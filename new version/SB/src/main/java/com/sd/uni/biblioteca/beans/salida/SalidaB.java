@@ -53,11 +53,17 @@ public class SalidaB extends BaseBean {
 		}
 		
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+
 		//para que no lance error
 		try {
-			setFecha(formato.parse(params.get("fecha")));
+			if(null != params.get("fecha")){
+				setFecha(formato.parse(params.get("fecha")));
+			}
+
 		} catch (ParseException e) {
 			e.printStackTrace();
+
+
 		}
 			
 		setDescripcion(params.get("descripcion"));

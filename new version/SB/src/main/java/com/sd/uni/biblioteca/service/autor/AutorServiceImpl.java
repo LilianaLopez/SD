@@ -26,8 +26,8 @@ public class AutorServiceImpl extends BaseServiceImpl<AutorB, AutorDTO>
 	private IAutorResource _autorResource=new AutorResourceImpl();
 	
 	@Override
-	@CacheEvict(value="biblioteca-platform-web-cache", key="'autor_'")
-	@CachePut(value="biblioteca-platform-web-cache", key="'autor_'+#bean.getId()", condition="#bean.getId() != null")
+	//@CacheEvict(value="biblioteca-client-web-cache", key="'autor_'")
+	//@CachePut(value="biblioteca-client-web-cache", key="'autor_'+#bean.getId()", condition="#bean.getId() != null")
 	public AutorB save(AutorB bean) {
 		final AutorDTO dto = convertBeanToDto(bean);
 		final AutorDTO autorDTO = _autorResource.save(dto);
@@ -35,7 +35,7 @@ public class AutorServiceImpl extends BaseServiceImpl<AutorB, AutorDTO>
 	}
 	
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'autor_'")	
+	//@Cacheable(value="biblioteca-client-web-cache", key="'autor_'")
 	public List<AutorB> find(int page, int maxItems) {
 		final AutorResult result = _autorResource.find(page, maxItems);
 		final List<AutorDTO> uList = null == result.getAutors() ? new ArrayList<AutorDTO>() : result.getAutors();
@@ -49,7 +49,7 @@ public class AutorServiceImpl extends BaseServiceImpl<AutorB, AutorDTO>
 	}
 	
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'autor_'")	
+	//@Cacheable(value="biblioteca-client-web-cache", key="'Client_autor_'")
 	public List<AutorB> find(String textToFind, int page, int maxItems) {
 		final AutorResult result = _autorResource.find(page, maxItems);
 		final List<AutorDTO> uList = null == result.getAutors() ? new ArrayList<AutorDTO>() : result.getAutors();
@@ -64,7 +64,7 @@ public class AutorServiceImpl extends BaseServiceImpl<AutorB, AutorDTO>
 
 
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'autor_'")	
+	//@Cacheable(value="biblioteca-client-web-cache", key="'Client_autor_'")
 	public List<AutorB> getAll() {
 		final AutorResult result = _autorResource.getAll();
 		final List<AutorDTO> rList = null == result.getAutors() ? new ArrayList<AutorDTO>()
@@ -79,7 +79,7 @@ public class AutorServiceImpl extends BaseServiceImpl<AutorB, AutorDTO>
 	}
 
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'autor_' +#id")
+	//@Cacheable(value="biblioteca-client-web-cache", key="'Clint_autor_' +#id")
 	public AutorB getById(Integer id) {
 		final AutorDTO dto = _autorResource.getById(id);
 		return convertDtoToBean(dto);

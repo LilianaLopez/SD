@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="nav">
+		<meta name="layout" content="template">
 		<g:set var="entityName" value="${message(code: 'cliente.label', default: 'Cliente')}" />
 		<asset:stylesheet src="application.css" />
    		<asset:javascript src="application.js" />

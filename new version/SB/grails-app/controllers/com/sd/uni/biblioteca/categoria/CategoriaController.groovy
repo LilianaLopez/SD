@@ -3,7 +3,7 @@ package com.sd.uni.biblioteca.categoria
 import com.sd.uni.biblioteca.beans.categoria.CategoriaB
 import com.sd.uni.biblioteca.service.categoria.ICategoriaService
 import com.sd.uni.biblioteca.service.categoria.CategoriaServiceImpl
-import com.sd.uni.biblioteca.service.usuario.IUsuarioService;
+//import com.sd.uni.biblioteca.service.usuario.IUsuarioService;
 import org.springframework.security.access.annotation.Secured
 
 class CategoriaController {

@@ -13,7 +13,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.sd.uni.biblioteca.beans.categoria.CategoriaB;
-import com.sd.uni.biblioteca.beans.libro.LibroB;
+//import com.sd.uni.biblioteca.beans.libro.LibroB;
 import com.sd.uni.biblioteca.rest.categoria.ICategoriaResource;
 import com.sd.uni.biblioteca.rest.categoria.CategoriaResourceImpl;
 import com.sd.uni.biblioteca.dto.categoria.CategoriaDTO;
@@ -21,6 +21,7 @@ import com.sd.uni.biblioteca.dto.categoria.CategoriaResult;
 import com.sd.uni.biblioteca.dto.libro.LibroDTO;
 import com.sd.uni.biblioteca.dto.libro.LibroResult;
 import com.sd.uni.biblioteca.service.base.BaseServiceImpl;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service("categoriaService")
 public class CategoriaServiceImpl extends BaseServiceImpl<CategoriaB, CategoriaDTO>
@@ -29,8 +30,8 @@ public class CategoriaServiceImpl extends BaseServiceImpl<CategoriaB, CategoriaD
 	private ICategoriaResource _categoriaResource=new CategoriaResourceImpl();
 	
 	@Override
-	@CacheEvict(value="biblioteca-platform-web-cache", key="'categoria_'")
-	@CachePut(value="biblioteca-platform-web-cache", key="'categoria_'+#bean.getId()", condition="#bean.getId() != null")
+	//@CacheEvict(value="biblioteca-platform-web-cache", key="'categoria_'")
+	//@CachePut(value="biblioteca-platform-web-cache", key="'categoria_'+#bean.getId()", condition="#bean.getId() != null")
 	public CategoriaB save(CategoriaB bean) {
 		final CategoriaDTO dto = convertBeanToDto(bean);
 		final CategoriaDTO categoriaDTO = _categoriaResource.save(dto);
@@ -38,7 +39,7 @@ public class CategoriaServiceImpl extends BaseServiceImpl<CategoriaB, CategoriaD
 	}
 	
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'categoria_'")	
+	//@Cacheable(value="biblioteca-platform-web-cache", key="'categoria_'")
 	public List<CategoriaB> find(int page, int maxItems) {
 		final CategoriaResult result = _categoriaResource.find(page, maxItems);
 		final List<CategoriaDTO> uList = null == result.getCategorias() ? new ArrayList<CategoriaDTO>() : result.getCategorias();
@@ -52,7 +53,7 @@ public class CategoriaServiceImpl extends BaseServiceImpl<CategoriaB, CategoriaD
 	}
 	
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'categoria_'")	
+	//@Cacheable(value="biblioteca-platform-web-cache", key="'categoria_'")
 	public List<CategoriaB> find(String textToFind, int page, int maxItems) {
 		final CategoriaResult result = _categoriaResource.find(page, maxItems);
 		final List<CategoriaDTO> uList = null == result.getCategorias() ? new ArrayList<CategoriaDTO>() : result.getCategorias();
@@ -66,7 +67,7 @@ public class CategoriaServiceImpl extends BaseServiceImpl<CategoriaB, CategoriaD
 	}
 
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'categoria_'")	
+	//@Cacheable(value="biblioteca-platform-web-cache", key="'categoria_'")
 	public List<CategoriaB> getAll() {
 		final CategoriaResult result = _categoriaResource.getAll();
 		final List<CategoriaDTO> rList = null == result.getCategorias() ? new ArrayList<CategoriaDTO>()
@@ -81,7 +82,8 @@ public class CategoriaServiceImpl extends BaseServiceImpl<CategoriaB, CategoriaD
 	}
 
 	@Override
-	@Cacheable(value="biblioteca-platform-web-cache", key="'categoria_' +#id")
+	//@Cacheable(value="biblioteca-platform-web-cache", key="'c_categoria_' +#id",  sync = true)
+	//@Transactional(readOnly = true)
 	public CategoriaB getById(Integer id) {
 		final CategoriaDTO dto = _categoriaResource.getById(id);
 		return convertDtoToBean(dto);

@@ -26,8 +26,8 @@ public class CategoriaResourceImpl extends BaseResourceImpl<CategoriaDTO> implem
 		return categoria;
 	}
 
-	//@Cacheable(value = CACHE_REGION, key = "'categoria_' + #id")
 	@Override
+	//@Cacheable(value = CACHE_REGION, key = "'categoria_' + #id")
 	public CategoriaDTO getById(Integer id) {
 		setWebResourceBasicAuthFilter();
 		return super.getById(id);

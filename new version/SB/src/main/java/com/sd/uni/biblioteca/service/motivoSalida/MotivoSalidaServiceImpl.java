@@ -9,15 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sd.uni.biblioteca.beans.motivoSalida.MotivoSalidaB;
-import com.sd.uni.biblioteca.beans.rol.RolB;
+//import com.sd.uni.biblioteca.beans.rol.RolB;
 import com.sd.uni.biblioteca.dto.motivoSalida.MotivoSalidaDTO;
 import com.sd.uni.biblioteca.dto.motivoSalida.MotivoSalidaResult;
-import com.sd.uni.biblioteca.dto.rol.RolDTO;
-import com.sd.uni.biblioteca.dto.rol.RolResult;
+//import com.sd.uni.biblioteca.dto.rol.RolDTO;
+//import com.sd.uni.biblioteca.dto.rol.RolResult;
 import com.sd.uni.biblioteca.rest.motivoSalida.IMotivoSalidaResource;
 import com.sd.uni.biblioteca.rest.motivoSalida.MotivoSalidaResourceImpl;
-import com.sd.uni.biblioteca.rest.rol.IRolResource;
-import com.sd.uni.biblioteca.rest.rol.RolResourceImpl;
+//import com.sd.uni.biblioteca.rest.rol.IRolResource;
+//import com.sd.uni.biblioteca.rest.rol.RolResourceImpl;
 import com.sd.uni.biblioteca.service.base.BaseServiceImpl;
 
 @Service("motivoSalidaService")

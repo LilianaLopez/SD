@@ -35,7 +35,7 @@
 	   				<div class="col-md-12">
 	   					<div id="searchbox"> 
 							<label>Buscar :
-		   						<g:remoteField  update="updateMe" id="searching" class="form-control"  name= "searching" paramName ="text" url="[action:'showResult', controller:'motivoEntrada']"/>
+		   						%{--<g:remoteField  update="updateMe" id="searching" class="form-control"  name= "searching" paramName ="text" url="[action:'showResult', controller:'motivoEntrada']"/>--}%
 							</label>
 						</div>
 						

@@ -84,7 +84,7 @@ public class InvitacionServiceImpl implements IInvitacionService{
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");
 			
 			try {
-				String text = "<!DOCTYPE html><html lang=\"es\"><head><title>Bootstrap Example</title>"
+				String text = "<!DOCTYPE html><html lang=\"es\"><head><title>Biblioteca publica</title>"
 						+ "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
 						+ "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
 						+ "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>"
@@ -102,7 +102,7 @@ public class InvitacionServiceImpl implements IInvitacionService{
 					    + "<p>Informacion importante </p>" + "<p> La biblioteca de la ciudad cuenta con nuevos ejemplares para difrutar. Le invitamos coordialmente a pasar por el local" 
 					    + ".</p><br><p>Horario de Atecion</p>"
 					    + "<p><b>Lunes a viernes: de 7.30 a 18.00 hs </b></p>"
-					    + "<p>Para mayor información no dude en contactarnos</p><br>"                            
+					    + "<p>Para mayor informacion no dude en contactarnos</p><br>"                            
 					    + "<address>"
 					    + "<strong></strong><br> Calle 1 , esquina 5 <br>"
 					    + "Ciudad nueva<br>"
@@ -112,12 +112,10 @@ public class InvitacionServiceImpl implements IInvitacionService{
 					    + "<span class=\"label label-warning\"><span class=\"glyphicon glyphicon-info-sign\" aria-hidden=\"true\"></span>"
 					    + "<br><br></div></div><br/></div></body></html>";
 			
-				/*****################################################################*****/
-				/*Elementos de arriba encapsulados para poder probar con datos rapidos*/
-				/****#################################################################****/
+		
 				System.out.println("Enviando una invitacion al: "+ invitacion.getEmail());
 				Message message = new MimeMessage(session);
-				message.setFrom(new InternetAddress("yoochunmicky6002@gmail.com"));
+				message.setFrom(new InternetAddress("bibliotecadistri@gmail.com"));
 				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(invitacion.getEmail()));
 				message.setSubject("Notificacion de Invitacion");
 				message.setContent(text, "text/html; charset=utf-8");
@@ -136,13 +134,13 @@ public class InvitacionServiceImpl implements IInvitacionService{
 
 	@Transactional
 	public void enviarInvitaciones() throws BibliotecaException{
-		InvitacionDomain of= new InvitacionDomain();
+		/*InvitacionDomain of= new InvitacionDomain();
 		of.setCliente(clienteDao.getById(1));
 		ClienteDomain c= clienteDao.getById(1);
 		System.out.println("el cliente es " + c.getCorreo());
 		of.setEmail("lilianalopez0710@gmail.com");
 		of.setFechaCreacion(new Date());
-		final InvitacionDomain invitacion = invitacionDao.save(of);
+		final InvitacionDomain invitacion = invitacionDao.save(of);*/
 		List<InvitacionDomain> invitaciones = invitacionDao.findAll();
 		for (InvitacionDomain invi : invitaciones){
 			if (enviar(invi)){

@@ -34,7 +34,7 @@ public class AuthServiceImpl implements IAuthService {
 		//GrailsUser userDetails = (GrailsUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Authentication au = SecurityContextHolder.getContext().getAuthentication();
 
-		System.out.println("User nameee : " + ((UserDetails) au.getPrincipal()).getUsername());
+
 	    if (au.getPrincipal() instanceof UserDetails) {
 	        String username=((UserDetails) au.getPrincipal()).getUsername();
 	        
@@ -47,12 +47,11 @@ public class AuthServiceImpl implements IAuthService {
 	}	
 	
 	public String getPassword(){
-		GrailsUser userDetails = (GrailsUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		//GrailsUser userDetails = (GrailsUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Authentication au = SecurityContextHolder.getContext().getAuthentication();
 
 	    if (au.getPrincipal() instanceof UserDetails) {
 	        String password= ((UserDetails) au.getPrincipal()).getPassword();
-			System.out.println("Principal: " +  ((UserDetails) au.getPrincipal()).getPassword());
 	        return password;
 
 	    } else {

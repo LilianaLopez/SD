@@ -15,6 +15,12 @@
     	<sec:intercept-url pattern="/rest/user/**" access="permitAll()"/>
     	<sec:intercept-url pattern="/rest/configuracion" access="permitAll()"/>
     	<sec:intercept-url pattern="/rest/configuracion/**" access="permitAll()"/>
+    	<sec:intercept-url pattern="/rest/autor/**" access="permitAll()"/>
+    	<sec:intercept-url pattern="/rest/cliente/**" access="permitAll()"/>
+    	<sec:intercept-url pattern="/rest/contacto/**" access="permitAll()"/>
+    	<sec:intercept-url pattern="/rest/contacto/**" access="permitAll()"/>
+    	<sec:intercept-url pattern="/rest/salida/**" access="permitAll()"/>
+    	<sec:intercept-url pattern="/rest/salidaDetalle/**" access="permitAll()"/>
     	 
     	<!-- Nota: la url a user solo se habilita para crear datos básicos en la bd, en produccion no se necesita y seria un hueco a de seguridad
     	           la url a role es necesaria pero deja un hueco de seguridad -->

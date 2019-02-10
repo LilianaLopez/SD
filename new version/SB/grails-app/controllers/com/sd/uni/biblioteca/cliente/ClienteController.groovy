@@ -21,7 +21,7 @@ class ClienteController {
 			redirect(action: "list", params: params)
 		}
 		
-		@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+		//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 		def list(Integer max) {
 			def clientes = clienteService.getAll()
 		//	def tom = clienteService.getTom()
@@ -30,13 +30,13 @@ class ClienteController {
 
 		}
 		
-		@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+		//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 		def create() {
 			
 		 [clienteInstance: new ClienteB(params)]
 		}
 		
-		@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+		//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 		def save() {
 			//def menuPopulars = menuPopularService.ordenarMenus(5)
 			def clienteInstance = new ClienteB(params)
@@ -48,20 +48,20 @@ class ClienteController {
 			}
 	
 			flash.message = message(code: 'default.created.message', args: [
-				message(code: 'cliente.label', default: 'Cliente'),
+				message(code: 'Cliente', default: 'Cliente'),
 				nuevaCliente.getNombre(),
 				nuevaCliente.getApellido()
 			])
 			redirect(action: "show", id: nuevaCliente.getId())
 		}
 	
-		@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+		//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 		def show(Long id) {
 			//def menuPopulars = menuPopularService.ordenarMenus(5)
 			def clienteInstance = clienteService.getById(id.intValue())
 			if (!clienteInstance) {
 				flash.message = message(code: 'default.not.found.message', args: [
-					message(code: 'cliente.label', default: 'Cliente'),
+					message(code: 'Cliente', default: 'Cliente'),
 					id
 				])
 				redirect(action: "list")
@@ -71,7 +71,7 @@ class ClienteController {
 			[clienteInstance: clienteInstance]
 		}
 	
-		@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+		//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 		def edit(Long id) {
 			
 			def clienteInstance = clienteService.getById((Integer.parseInt(params.get("id"))))
@@ -87,7 +87,7 @@ class ClienteController {
 			[clienteInstance: clienteInstance]
 		}
 		
-		@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+		//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 		def update(Long id) {
 			def clienteInstance = clienteService.getById(Integer.parseInt(params.get("edit")))
 			if (!clienteInstance) {

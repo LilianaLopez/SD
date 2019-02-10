@@ -3,7 +3,7 @@ package com.sd.uni.biblioteca.motivoEntrada
 import com.sd.uni.biblioteca.beans.motivoEntrada.MotivoEntradaB
 import com.sd.uni.biblioteca.service.motivoEntrada.IMotivoEntradaService
 import com.sd.uni.biblioteca.service.motivoEntrada.MotivoEntradaServiceImpl
-import com.sd.uni.biblioteca.service.usuario.IUsuarioService;
+//import com.sd.uni.biblioteca.service.usuario.IUsuarioService;
 import grails.plugin.springsecurity.annotation.Secured
 
 class MotivoEntradaController {

@@ -18,10 +18,11 @@ public class InvitacionCron {
 	@Autowired
 	private IInvitacionService invitacionService;
 	
-	@Value("false")
+	@Value("true")
 	private String enableCron;
 	
-	@Scheduled(cron = "*/60 * * * * ?" )
+	//@Scheduled(cron = "*/60 * * * * ?" )
+	@Scheduled(cron = "0 */5 * * * ?" )
     public void sendNotification(){
 		try {
 			if (enableCron.equalsIgnoreCase("true")){

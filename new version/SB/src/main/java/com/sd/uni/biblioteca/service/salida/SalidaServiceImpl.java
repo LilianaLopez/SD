@@ -8,25 +8,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sd.uni.biblioteca.beans.motivoSalida.MotivoSalidaB;
 import com.sd.uni.biblioteca.beans.salida.SalidaB;
-import com.sd.uni.biblioteca.beans.usuario.UsuarioB;
-import com.sd.uni.biblioteca.dto.motivoSalida.MotivoSalidaDTO;
 import com.sd.uni.biblioteca.dto.salida.SalidaDTO;
 import com.sd.uni.biblioteca.dto.salida.SalidaResult;
-import com.sd.uni.biblioteca.dto.usuario.UsuarioDTO;
-import com.sd.uni.biblioteca.dto.usuario.UsuarioResult;
-import com.sd.uni.biblioteca.rest.motivoSalida.IMotivoSalidaResource;
-import com.sd.uni.biblioteca.rest.motivoSalida.MotivoSalidaResourceImpl;
 import com.sd.uni.biblioteca.rest.salida.ISalidaResource;
 import com.sd.uni.biblioteca.rest.salida.SalidaResourceImpl;
-import com.sd.uni.biblioteca.rest.usuario.IUsuarioResource;
-import com.sd.uni.biblioteca.rest.usuario.UsuarioResourceImpl;
 import com.sd.uni.biblioteca.service.base.BaseServiceImpl;
 import com.sd.uni.biblioteca.service.motivoSalida.IMotivoSalidaService;
 import com.sd.uni.biblioteca.service.motivoSalida.MotivoSalidaServiceImpl;
-import com.sd.uni.biblioteca.service.rol.IRolService;
-import com.sd.uni.biblioteca.service.rol.RolServiceImpl;
 
 @Service("SalidaService")
 public class SalidaServiceImpl extends BaseServiceImpl<SalidaB, SalidaDTO> implements ISalidaService {

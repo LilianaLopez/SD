@@ -36,7 +36,8 @@ import com.sd.uni.biblioteca.service.user.IUserService;
 import org.springframework.stereotype.Service;
 
 
-class MyAuthenticationProvider implements AuthenticationProvider {
+class
+MyAuthenticationProvider implements AuthenticationProvider {
 	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	
 	//@Autowired
@@ -48,7 +49,6 @@ class MyAuthenticationProvider implements AuthenticationProvider {
 		UsernamePasswordAuthenticationToken auth = (UsernamePasswordAuthenticationToken) authentication;
 
 
-        System.out.println("holaaa:" + auth.getPrincipal());
 		String username = String.valueOf(auth.getPrincipal());
 		String password = String.valueOf(auth.getCredentials());
 
@@ -63,7 +63,7 @@ class MyAuthenticationProvider implements AuthenticationProvider {
 		System.out.println(user.getUsername());
 		if(user!=null){ 
 			if (passwordEncoder.matches(password,user.getPassword())) {
-					System.out.println("entrooo");
+
 				List<GrantedAuthority> authorities = getUserRoles(user);
 				if(authorities != null){
 					//MyUserDetails(String username, String password, boolean enabled,boolean accountNonExpired, boolean credentialsNonExpired,boolean accountNonLocked,Collection<GrantedAuthority> authorities,long id) {

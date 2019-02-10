@@ -19,41 +19,40 @@ public class AutorResourceImpl extends BaseResourceImpl<AutorDTO> implements
 	}
 
 	@Override
-	//@CacheEvict(value = CACHE_REGION, key = "'autor_' + #dto.id", condition = "#dto.id!=null")
+	//@CacheEvict(value = "biblioteca-platform-cache", key = "'c_autor_' + #dto.id", condition = "#dto.id!=null")
 	public AutorDTO save(AutorDTO dto) {
-		setWebResourceBasicAuthFilter();
+		//setWebResourceBasicAuthFilter();
 		final AutorDTO autor = getWebResource().entity(dto).post(getDtoClass());
 		return autor;
 	}
 
-	//@Cacheable(value = CACHE_REGION, key = "'autor_' + #id")
+	//@Cacheable(value = "biblioteca-platform-cache", key = "'autor_' + #id")
 	@Override
 	public AutorDTO getById(Integer id) {
-		setWebResourceBasicAuthFilter();
+		//setWebResourceBasicAuthFilter();
 		return super.getById(id);
 	}
 
 	@Override
 	public AutorResult getAll() {
-		setWebResourceBasicAuthFilter();
+		//setWebResourceBasicAuthFilter();
 		AutorResult autors = getWebResource().get(AutorResult.class);
 		/*for (AutorDTO autor : autors.getAutors()) {
 			getCacheManager().getCache(CACHE_REGION).put("autor_" + autor.getId(), autor);
 		}*/
 		return autors;
 	}
-	
+
 	@Override
 	public AutorResult find(int maxItems, int page){
-		setWebResourceBasicAuthFilter();
 		AutorResult autores = search(maxItems,page).get(AutorResult.class);
-		
+
 		return autores;
 	}
 	
 	@Override
 	public AutorResult find(String textToFind, int maxItems, int page){
-		setWebResourceBasicAuthFilter();
+		//setWebResourceBasicAuthFilter();
 		AutorResult autores = search(textToFind, maxItems,page).get(AutorResult.class);
 		
 		return autores;

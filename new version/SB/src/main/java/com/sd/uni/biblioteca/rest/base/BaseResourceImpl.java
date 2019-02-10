@@ -25,12 +25,12 @@ public abstract class BaseResourceImpl<DTO extends BaseDTO> implements IBaseReso
 	@Autowired
 	private IAuthService authService=new AuthServiceImpl();
 	private static final String BASE_URL = "http://localhost:8080/Biblioteca/rest";
-	protected static final String CACHE_REGION = "biblioteca-platform-web-cache";
-	
+	//protected static final String CACHE_REGION = "biblioteca-platform-web-cache";
 
-	@Autowired
-	@Qualifier("grailsCacheManager")
-	private CacheManager _cacheManager;
+
+	//@Autowired
+	//@Qualifier("grailsCacheManager")
+	//private CacheManager _cacheManager;
 	
 	
 	public BaseResourceImpl(Class<DTO> dtoClass, String resourcePath) {

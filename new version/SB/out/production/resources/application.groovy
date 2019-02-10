@@ -8,8 +8,18 @@ grails.plugin.springsecurity.providerManager.eraseCredentialsAfterAuthentication
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
-	[pattern: '/index',          access: ['permitAll']],
-	[pattern: '/index.gsp',      access: ['permitAll']],
+    [pattern: '/index',          access: ['permitAll']],
+    [pattern: '/index.gsp',      access: ['permitAll']],
+	[pattern: '/cliente',      access: ['permitAll']],
+	[pattern: '/cliente/**',      access: ['permitAll']],
+	[pattern: '/contacto',      access: ['permitAll']],
+	[pattern: '/contacto/**',      access: ['permitAll']],
+	[pattern: '/motivoSalida',      access: ['permitAll']],
+	[pattern: '/motivoSalida/**',      access: ['permitAll']],
+	[pattern: '/autor',      access: ['permitAll']],
+	[pattern: '/autor/**',      access: ['permitAll']],
+	[pattern: '/salida',      access: ['permitAll']],
+	[pattern: '/salida/**',      access: ['permitAll']],
 	[pattern: '/shutdown',       access: ['permitAll']],
 	[pattern: '/assets/**',      access: ['permitAll']],
 	[pattern: '/**/js/**',       access: ['permitAll']],
@@ -32,6 +42,6 @@ grails.plugin.springsecurity.providerNames = [
 		'anonymousAuthenticationProvider',
 		'rememberMeAuthenticationProvider']
 
-grails.plugin.springsecurity.rememberMe.persistent = true
-grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'com.login.PersistentLogin'
+//grails.plugin.springsecurity.rememberMe.persistent = true
+//grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'com.login.PersistentLogin'
 

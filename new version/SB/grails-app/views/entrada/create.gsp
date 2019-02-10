@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="template">
-		<g:set var="entityName" value="${message(code: 'entrada.label', default: 'Entrada')}" />
+		<g:set var="entityName" value="Entrada de libros" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 		<asset:stylesheet src="application.css"/>
 		<asset:javascript src="application.js"/>
@@ -82,10 +82,7 @@
 			
 		<!-- Bootstrap Core JavaScript -->
 
-	<script type="text/javascript" src="/assets/assets/js/jquery.js"> </script>
-    <script type="text/javascript" src="/assets/assets/js/jquery-1.8.3.min.js"> </script>
-    <script type="text/javascript" src="/assets/assets/js/chart-master/Chart.js"></script>
-    <script type="text/javascript" src="/assets/assets/js/bootstrap.min.js"></script>
+
 	
 <script type="text/javascript">
 
