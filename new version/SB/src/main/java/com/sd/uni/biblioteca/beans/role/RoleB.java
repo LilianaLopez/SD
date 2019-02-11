@@ -12,6 +12,8 @@ public class RoleB extends BaseBean{
 
 	private String _authority;
 
+
+
 	public RoleB(Map<String, String> params) {
 		super(params);
 	}
@@ -19,6 +21,9 @@ public class RoleB extends BaseBean{
 	public String getAuthority() {
 		return _authority;
 	}
+
+
+
 
 	public void setAuthority(String _authority) {
 		this._authority = _authority;
