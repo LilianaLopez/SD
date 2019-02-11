@@ -22,12 +22,11 @@
                             <a class="btn btn-theme03" href="/Sistema-Biblioteca/cliente/create"
                                role="button"><i class="fa fa-plus"></i> Nuevo Cliente</a>
                         </div>
+
                     </div>
-                	</div>
-                    <div class="row">
                     ${tom}
-                    	<div class="col-sm-12">
-                        	<table id="list-cliente" class="table table-bordered" cellspacing="0"
+
+                        	<table id="list-cliente" class="table table-striped table-advance table-hover" cellspacing="0"
                                 width="100%">
                             	<thead>
                                     <tr>
@@ -72,10 +71,10 @@
 						<div class="pagination">
 							<g:paginate total="${clienteInstanceTotal}" />
 						</div>
-					</div>
-				</div>              
         	</div>
-    	</div>
+    	  </div>
+
+        </div>
     </div>
 	</body>
 </html>

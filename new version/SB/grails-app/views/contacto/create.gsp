@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="nav">
+		<meta name="layout" content="template">
 		<g:set var="entityName" value="${message(code: 'contacto.label', default: 'Contacto')}" />
 		<asset:stylesheet src="application.css" />
    		<asset:javascript src="application.js" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		
+	<div class="col-md-12">
 		<div id="create-contacto" class="container col-md-9" role="main">
 			<g:if test="${flash.message}">
 			<div class="alert alert-warning" role="status">${flash.message}</div>
@@ -22,28 +22,19 @@
 			</ul>
 			</g:hasErrors>
 			<div class="row">
-            	<div class="panel panel-default">
+            	<div class="form-panel">
                 	<div class="panel-heading ">
                     	<h4>
-                        	<strong>Contáctanos</strong>
+                        	<strong>Envíenos su mensaje</strong>
                     	</h4>
+					<p>
                 	</div>
                 	<div class="panel-body">
                 		<p>
-	       			 		</br>	       			 		
-	       			 		<div class="col-md-6">
-	       			 		</br>Contanos en que podemos ayudarte y nos ponemos en contacto con vos!!</br>
-	       			 		</br>Completá el formulario y estaremos respondiendo 
-	       			 		tu contacto por medio de correo electrónico.
-	       			 		</div>
-	       			 		<div class="col-md-6">
-	       			 		<g:img dir="images" file="restaurante-la-casona.jpg" width="260" height="120" align="right"/> 
-	       			 		</div>
-	       			 		</br></br></br>
-	       			 		
+
        			 		</p>
        			 		<div class="col-md-12">
-       			 		</br></br>
+
 						<g:form action="save" class= "formContact">
 							<fieldset class="form">
 								<g:render template="form"/>
@@ -64,6 +55,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</body>
 </html>

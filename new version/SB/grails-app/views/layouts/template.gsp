@@ -22,15 +22,10 @@
 
       <asset:stylesheet src="assets/font-awesome/css/font-awesome.css"/>
       <asset:stylesheet src="assets/css/zabuto_calendar.css"/>
-      <asset:stylesheet src="assets/js/gritter/css/jquery.gritter.css"/>
+      %{--<asset:stylesheet src="assets/js/gritter/css/jquery.gritter.css"/>--}%
       <asset:stylesheet src="assets/lineicons/style.css"/>
 
-    <asset:javascript src="assets/js/jquery.js"/>
-    <asset:javascript src="assets/js/jquery-1.8.3.min.js"/>
-    <asset:javascript src="assets/js/chart-master/Chart.js"/>
-    <asset:javascript src="assets/assets/js/bootstrap.min.js"/>
-   
-    
+
   </head>
 
   <body>
@@ -337,33 +332,28 @@
       </footer>
       <!--footer end-->
   </section>
-  
-  
   <asset:javascript src="assets/js/chart-master/Chart.js"/>
+
   <asset:javascript src="assets/js/jquery.js"/>
-  <asset:javascript src="assets/js/jquery-1.8.3.min.js"/>
+  <asset:javascript src="jquery-1.8.3.min.js"/>
   <asset:javascript src="assets/js/bootstrap.min.js"/>
-  <asset:javascript src="assets/js/jquery.dcjqaccordion.2.7.js"/>
+  <<asset:javascript src="jquery.dcjqaccordion.2.7.js"/>
   <asset:javascript src="assets/js/jquery.scrollTo.min.js"/>
-  <asset:javascript src="assets/js/jquery.nicescroll.js"/>
+  <asset:javascript src="assets/js/jquery.nicescroll.js" type="text/javascript"/>
   <asset:javascript src="assets/js/jquery.sparkline.js"/>
 
 
-    <!--common script for all pages-->
   <asset:javascript src="assets/js/common-scripts.js"/>
-  <asset:javascript src="assets/js/gritter/js/jquery.gritter.js"/>
-  <asset:javascript src="assets/js/gritter-conf.js"/>
+
+  <asset:javascript src="assets/theme/assets/js/gritter/js/jquery.gritter.js"/>
+  <asset:javascript src="assets/theme/assets/js/gritter-conf.js"/>
+
+
   <asset:javascript src="assets/js/sparkline-chart.js"/>
   <asset:javascript src="assets/js/zabuto_calendar.js"/>
 
 
-<asset:javascript src="assets/js/jquery.js"/>
-  <asset:javascript src="assets/js/jquery-1.8.3.min.js"/>
-        <asset:javascript src="assets/js/chart-master/Chart.js"/>
-            <asset:javascript src="assets/assets/js/bootstrap.min.js"/>
-
-
-   <script type="application/javascript">
+  %{-- <script type="application/javascript">
 
         $(document).ready(function () {
         var unique_id = $.gritter.add({
@@ -384,8 +374,8 @@
         return false;
         });
 	</script>
-
-	<script type="application/javascript">
+--}%%{--
+  <script type="application/javascript">
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
@@ -418,9 +408,10 @@
             var to = $("#" + id).data("to");
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
-    </script>
-  
-  
+    </script>--}%
+
+
+
   </body>
 </html>
 	

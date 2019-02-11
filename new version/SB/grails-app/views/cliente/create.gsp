@@ -9,8 +9,10 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		
-		<div id="create-cliente" class="container col-md-9" role="main">
+	<div class="container-fluid">
+		<div class="row mt" id="create-cliente" >
+			<div class="col-lg-12">
+
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -21,8 +23,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<div class="row">
-            	<div class="panel panel-default">
+            	<div class="form-panel">
                 	<div class="panel-heading ">
                     	<h4>
                         	<strong>Nuevo Cliente</strong>
@@ -46,9 +47,11 @@
 							</fieldset>
 						</g:form>
 					</div>
-				</div>
+
 			</div>
 		</div>
+		</div>
+	</div>
 		<script type="text/javascript">
 		$(document).on('click','#invitacion:checked',function(e){
 			$('#invitacion').prop('value', true);

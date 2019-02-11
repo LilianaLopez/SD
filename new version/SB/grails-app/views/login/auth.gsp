@@ -102,7 +102,7 @@
 
   <asset:javascript src="assets/js/chart-master/Chart.js"/>
   <asset:javascript src="assets/js/jquery.js"/>
-  <asset:javascript src="assets/js/jquery-1.8.3.min.js"/>
+  <asset:javascript src="jquery-1.8.3.min.js"/>
   <asset:javascript src="assets/js/bootstrap.min.js"/>
   <asset:javascript src="assets/js/jquery.dcjqaccordion.2.7.js"/>
   <asset:javascript src="assets/js/jquery.scrollTo.min.js"/>

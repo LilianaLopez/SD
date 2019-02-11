@@ -83,7 +83,7 @@
 		<!-- Bootstrap Core JavaScript -->
 
 
-	
+		<asset:javascript src="jquery-1.8.3.min.js"/>
 <script type="text/javascript">
 
  $(document).ready(function() {

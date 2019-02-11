@@ -8,22 +8,25 @@
    		<asset:javascript src="application.js" />
 	</head>
 	<body>
-		<div class="container col-md-9">
-        	<div class="row">
-            	<div class="panel panel-default">
-                	<div class="panel-heading ">
-                		<div class="row">
-	                    	<h4 class="col-md-10">
-	                        	<strong>Lista de Clientes</strong>
-	                    	</h4>
-                    		<g:link action="create" class="btn btn-primary" >
-                         	<i class="fa fa-plus"></i>  Nuevo Cliente </g:link></td>
-                         </div>
-                	</div>
-                    <div class="row">
+    <h3></h3>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content-panel" >
+                    <div class="col-md-12">
+                        <div class="col-sm-4">
+                            <h4><i class="fa fa-angle-right"></i> Lista de Clientes</h4>
+                            <hr>
+                        </div>
+                        <div class="col-sm-8">
+                            <a class="btn btn-theme03" href="/Sistema-Biblioteca/cliente/create"
+                               role="button"><i class="fa fa-plus"></i> Nuevo Cliente</a>
+                        </div>
+
+                    </div>
                     ${tom}
-                    	<div class="col-sm-12">
-                        	<table id="list-cliente" class="table table-bordered" cellspacing="0"
+
+                        	<table id="list-cliente" class="table table-striped table-advance table-hover" cellspacing="0"
                                 width="100%">
                             	<thead>
                                     <tr>
@@ -68,10 +71,10 @@
 						<div class="pagination">
 							<g:paginate total="${clienteInstanceTotal}" />
 						</div>
-					</div>
-				</div>              
         	</div>
-    	</div>
+    	  </div>
+
+        </div>
     </div>
 	</body>
 </html>
