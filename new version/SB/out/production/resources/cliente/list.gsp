@@ -22,8 +22,14 @@
                             <a class="btn btn-theme03" href="/Sistema-Biblioteca/cliente/create"
                                role="button"><i class="fa fa-plus"></i> Nuevo Cliente</a>
                         </div>
+<<<<<<< HEAD
 
                     </div>
+=======
+                    </div>
+                	</div>
+                    <div class="row">
+>>>>>>> eda329afa484f2a869bd0b1eb27eba218f3f7fdb
                     ${tom}
 
                         	<table id="list-cliente" class="table table-striped table-advance table-hover" cellspacing="0"

@@ -16,6 +16,8 @@
 	http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<tx:annotation-driven />
+	
+	<context:property-placeholder location="WEB-INF/conf.properties" />
 
 	<context:component-scan base-package="com.sd.uni.biblioteca.dao"/>
 	<context:component-scan base-package="com.sd.uni.biblioteca.service"/>
@@ -24,10 +26,10 @@
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost/bibliotecadb" />
-		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="driverClassName" value="${db.className}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
 	</bean>
 
 	<bean id="sessionFactory"
@@ -35,16 +37,16 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
-				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+				<prop key="hibernate.dialect">${sessionFactory.hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${sessionFactory.hibernate.show_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${sessionFactory.hibernate.hbm2ddl.auto}</prop>
 			</props>
 		</property>
-		<property name="packagesToScan" value="com.sd.uni.biblioteca.domain" />
+		<property name="packagesToScan" value="${sessionFactory.packagesToScan}" />
 	</bean>
 
 	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+		class="${transactionManager}"
 		p:sessionFactory-ref="sessionFactory">
 	</bean>
 	
@@ -56,29 +58,29 @@
 				<bean class="com.google.code.ssm.spring.SSMCache">
 					<constructor-arg name="cache" index="0" ref="defaultCache" />
 					<!-- 5 minutes -->
-					<constructor-arg name="expiration" index="1" value="300" />
+					<constructor-arg name="expiration" index="1" value="${cache.expiration}" />
 					<!-- @CacheEvict(..., "allEntries" = true) won't work because allowClear 
 						is false, so we won't flush accidentally all entries from memcached instance -->
-					<constructor-arg name="allowClear" index="2" value="false" />
+					<constructor-arg name="allowClear" index="2" value="${cache.allowClear}" />
 				</bean>
 			</set>
 		</property>
 	</bean>
 
 	<bean name="defaultCache" class="com.google.code.ssm.CacheFactory">
-		<property name="cacheName" value="biblioteca-platform-cache" />
+		<property name="cacheName" value="${cache.name}" />
 		<property name="cacheClientFactory">
 			<bean name="cacheClientFactory"
 				class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
 		</property>
 		<property name="addressProvider">
 			<bean class="com.google.code.ssm.config.DefaultAddressProvider">
-				<property name="address" value="127.0.0.1:11211" />
+				<property name="address" value="${cache.ip}:${cache.port}" />
 			</bean>
 		</property>
 		<property name="configuration">
 			<bean class="com.google.code.ssm.providers.CacheConfiguration">
-				<property name="consistentHashing" value="true" />
+				<property name="consistentHashing" value="${cache.consistentHashing}" />
 			</bean>
 		</property>
 	</bean>
