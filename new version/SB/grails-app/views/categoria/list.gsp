@@ -31,16 +31,21 @@
 					${flash.message}
 				</div>
 				</g:if>
-				<!--EL BUSCAR -->
-	   				<div class="col-md-12">
-	   					<div id="searchbox"> 
-							<label>Buscar :
-		   						%{--<g:remoteField  update="updateMe" id="searching" class="form-control"  name= "searching" paramName ="text" url="[action:'showResult', controller:'categoria']"/>--}%
-							</label>
-						</div>
-						
-					</div>	
-				<!--END BUSCAR -->
+		<!--EL BUSCAR -->
+			<div class="col-md-12">
+				<g:form action="list" class="form-search">
+					<div class="input-group col-md-4">
+						<input type="text" name="text" class="form-control" maxlength="50" value="${text}"
+							   placeholder="Buscar" /> <span
+							class="input-group-btn">
+						<button class="btn btn-info" name="list" value="Buscar">
+							<span class=" glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+					</div>
+				</g:form>
+			</div>
+			<!--END BUSCAR -->
 				<table   id="list-report" class="table table-striped table-advance table-hover" cellspacing="0" width="100%">
 					<thead >
 					<tr>
@@ -53,6 +58,7 @@
 					</tbody>
 				</table>
 				<div class="pagination"></div>
+			<g:render template="/layouts/paginate"/>
 			</div>
 		</div>
 	</div>
