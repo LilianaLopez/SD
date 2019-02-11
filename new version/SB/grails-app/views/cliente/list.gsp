@@ -24,6 +24,21 @@
                         </div>
                     </div>
                 	</div>
+                <!--EL BUSCAR -->
+                <div class="col-md-12">
+                    <g:form action="list" class="form-search">
+                        <div class="input-group col-md-4">
+                            <input type="text" name="text" class="form-control" maxlength="50" value="${text}"
+                                   placeholder="Buscar" /> <span
+                                class="input-group-btn">
+                            <button class="btn btn-info" name="list" value="Buscar">
+                                <span class=" glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        </div>
+                    </g:form>
+                </div>
+                <!--END BUSCAR -->
                     <div class="row">
                     ${tom}
                     	<div class="col-sm-12">
@@ -70,7 +85,7 @@
 								</tbody>
 						</table>
 						<div class="pagination">
-							<g:paginate total="${clienteInstanceTotal}" />
+                            <g:render template="/layouts/paginate"/>
 						</div>
 					</div>
 				</div>              
