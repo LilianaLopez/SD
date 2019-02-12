@@ -24,14 +24,14 @@ public class MotivoSalidaResource {
 	@GET
 	@Path("/{id}")
 	@Produces("application/json")
-	@Secured({"ROLE_SUPERUSER", "ROLE_ADMIN"})
+	//@Secured({"ROLE_SUPERUSER", "ROLE_ADMIN"})
 	public MotivoSalidaDTO getById(@PathParam("id") Integer motivoSalidaId) throws BibliotecaException {
 		return motivoSalidaService.getById(motivoSalidaId);
 	}
 
 	@GET
 	@Produces("application/xml")
-	@Secured({"ROLE_SUPERUSER", "ROLE_ADMIN"})
+	//@Secured({"ROLE_SUPERUSER", "ROLE_ADMIN"})
 	public MotivoSalidaResult getAll() {
 		return motivoSalidaService.getAll();
 	}
@@ -39,13 +39,13 @@ public class MotivoSalidaResource {
 	@GET
 	@Path("search/{textToFind}")
 	@Produces("application/xml")
-	@Secured({"ROLE_SUPERUSER", "ROLE_ADMIN"})
+	//@Secured({"ROLE_SUPERUSER", "ROLE_ADMIN"})
 	public MotivoSalidaResult search(@PathParam("textToFind") String textToFind) {
 		return motivoSalidaService.find(textToFind);
 	}
 
 	@POST
-	@Secured({"ROLE_SUPERUSER", "ROLE_ADMIN"})
+	//@Secured({"ROLE_SUPERUSER", "ROLE_ADMIN"})
 	public MotivoSalidaDTO save(MotivoSalidaDTO motivoSalida) {
 		return motivoSalidaService.save(motivoSalida);
 	}

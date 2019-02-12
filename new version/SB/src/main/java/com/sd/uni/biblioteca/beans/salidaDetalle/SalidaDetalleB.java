@@ -50,7 +50,6 @@ public class SalidaDetalleB extends BaseBean{
 	protected void create(Map<String, String> params) {
 		if (!StringUtils.isBlank(params.get("id"))) {
 			setId(Integer.valueOf(params.get("id")));
-			setCantidad(Integer.valueOf(params.get("cantidad")));
 		}
 		
 	}

@@ -53,7 +53,7 @@ public class AutorResourceImpl extends BaseResourceImpl<AutorDTO> implements
 	@Override
 	public AutorResult find(String textToFind, int maxItems, int page){
 		//setWebResourceBasicAuthFilter();
-		AutorResult autores = search(textToFind, maxItems,page).get(AutorResult.class);
+		AutorResult autores =  findWR(textToFind, maxItems,page).get(AutorResult.class);
 		
 		return autores;
 	}

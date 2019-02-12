@@ -58,7 +58,7 @@ public class LibroResourceImpl extends BaseResourceImpl<LibroDTO> implements
 	@Override
 	public LibroResult find(String textToFind, int maxItems, int page){
 		setWebResourceBasicAuthFilter();
-		LibroResult libros = search(textToFind, maxItems,page).get(LibroResult.class);
+		LibroResult libros = findWR(textToFind, maxItems,page).get(LibroResult.class);
 		
 		return libros;
 	}

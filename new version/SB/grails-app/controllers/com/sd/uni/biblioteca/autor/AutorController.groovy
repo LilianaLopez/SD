@@ -16,7 +16,7 @@ class AutorController {
 	def IAutorService autorService = new  AutorServiceImpl();
 	def IAuthService authService = new AuthServiceImpl()
 
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN', 'ROLE_SECRETARY', 'ROLE_STUDENT', 'ROLE_TEACHER'])
     def index() {
 		redirect(action: "list", params: params)
 	}

@@ -12,7 +12,14 @@
         <div class="container-fluid">
         	<div class="row mt">
         		<div class="col-lg-12">
-	            	<div class="form-panel">		
+					<g:hasErrors bean="${usuarioInstance}">
+						<ul class="errors" role="alert">
+							<g:eachError bean="${usuarioInstance}" var="error">
+								<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+							</g:eachError>
+						</ul>
+					</g:hasErrors>
+	            	<div class="form-panel">
 	                	<div class="panel-heading">
 							<h4><strong>Registrarse</strong></h4>
 						</div>
@@ -24,10 +31,10 @@
 								<fieldset class="buttons">
 									<br>
 									<button type="submit" class="btn btn-primary" name="create" value="${message(code: 'default.button.create.label', default: 'Create')}">
-	  									<i class="fa fa-floppy-o"></i> Crear  
+	  									<i class="fa fa-floppy-o"></i> Crear
 									</button>
 								</fieldset>
-							</g:form>						
+							</g:form>
 						</div>
 					</div>
 				</div>

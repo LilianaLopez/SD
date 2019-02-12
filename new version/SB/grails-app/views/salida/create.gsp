@@ -11,6 +11,13 @@
 <div class="container-fluid">
 	<div class="row mt">
 		<div class="col-lg-12">
+			<g:hasErrors bean="${salidaInstance}">
+				<ul class="errors" role="alert">
+					<g:eachError bean="${salidaInstance}" var="error">
+						<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+					</g:eachError>
+				</ul>
+			</g:hasErrors>
 			<div class="form-panel">
 				<div class="panel-heading">
 					<h4><strong>Registrar salida de libros</strong></h4>
@@ -81,11 +88,7 @@
 </div>
 
 <!-- Bootstrap Core JavaScript -->
-
-<script src="${request.contextPath}/theme/assets/js/jquery.js"> </script>
-<script src="${request.contextPath}/theme/assets/js/jquery-1.8.3.min.js"> </script>
-<script src="${request.contextPath}/theme/assets/js/chart-master/Chart.js"></script>
-<script src="${request.contextPath}/theme/assets/js/bootstrap.min.js"></script>
+<asset:javascript src="jquery-1.8.3.min.js"/>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -118,6 +121,7 @@
             });
         });
     })
+
 </script>
 </body>
 

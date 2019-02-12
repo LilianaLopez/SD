@@ -52,15 +52,10 @@ MyAuthenticationProvider implements AuthenticationProvider {
 		String username = String.valueOf(auth.getPrincipal());
 		String password = String.valueOf(auth.getCredentials());
 
-        // password = "admin";
 
-        System.out.println("usuario : "+username);
-		System.out.println("password : "+password);
 
-		System.out.println(authentication);
 		UserB user = _userService.getByUsername(username);
-		//_userService.getByUsername(username);
-		System.out.println(user.getUsername());
+
 		if(user!=null){ 
 			if (passwordEncoder.matches(password,user.getPassword())) {
 
@@ -107,7 +102,7 @@ MyAuthenticationProvider implements AuthenticationProvider {
 			for (RoleB roleB : roles) {
 				
 				list.add(new SimpleGrantedAuthority(roleB.getAuthority()));
-				System.out.print(roleB.getAuthority()+" ");//Borrar
+				//System.out.print(roleB.getAuthority()+" ");
 			}
 		}
 

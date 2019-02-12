@@ -5,7 +5,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 col-sm-2 control-label">Nombre*</label>
 			<div class="col-sm-10">
-				<g:textField class="form-control" required="" name="name" value="${usuarioInstance?.name }"/>
+				<g:textField class="form-control" placeholder="Ingrese un nombre" maxlength="50" required = "true" type = "text" name="name" value="${usuarioInstance?.name }"/>
 			</div>
 		</div>
 	</div>
@@ -13,7 +13,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 col-sm-2 control-label">Usuario*</label>
 			<div class="col-sm-10">
-				<g:textField class="form-control" required="" name="username" value="${usuarioInstance?.username }"/>
+				<g:textField class="form-control" placeholder="Ingrese el nombre de usuario" maxlength="50" required = "true" type = "text" name="username" value="${usuarioInstance?.username }"/>
 			</div>
 		</div>
 	</div>
@@ -31,7 +31,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 col-sm-2 control-label">Contraseña*</label>
 			<div class="col-sm-10">	
-				<g:textField class="form-control" required="" name="password" value="${usuarioInstance?.password}"/>
+				<g:textField class="form-control" placeholder="Ingrese una contraseña" maxlength="50" required = "true" type = "text" name="password" value="${usuarioInstance?.password}"/>
 			</div>
 		</div>
 	</div>

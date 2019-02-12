@@ -13,12 +13,12 @@ class MotivoEntradaController {
 	//service
 	def IMotivoEntradaService motivoEntradaService =new MotivoEntradaServiceImpl()
 
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN','ROLE_SECRETARY', 'ROLE_STUDENT', 'ROLE_TEACHER'])
 	def index() {
 		redirect(action: "list", params: params)
 	}
 	
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN','ROLE_SECRETARY', 'ROLE_STUDENT', 'ROLE_TEACHER'])
 	def list(Integer max) {
 		def text = params.text
 		motivoEntradaService= new MotivoEntradaServiceImpl()
@@ -61,7 +61,7 @@ class MotivoEntradaController {
 		redirect(action: "list")
 	}
 	
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN', 'ROLE_SECRETARY', 'ROLE_STUDENT', 'ROLE_TEACHER'])
 	def showResult(Integer max) {
 		def text = params.text
 		motivoEntradaService=new MotivoEntradaServiceImpl()
@@ -76,7 +76,7 @@ class MotivoEntradaController {
 		render (template:"showResult", model:[motivoEntradaInstanceList: motivoEntradas, motivoEntradaInstanceTotal:motivoEntradas.size()])
 	}
 	
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN', 'ROLE_SECRETARY', 'ROLE_STUDENT', 'ROLE_TEACHER'])
 	def show(Long id) {
 		def motivoEntradaInstance = motivoEntradaService.getById(id.intValue())
 		if (!motivoEntradaInstance) {

@@ -13,6 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="content-panel" >
+
                     <div class="col-md-12">
                         <div class="col-sm-4">
                             <h4><i class="fa fa-angle-right"></i> Lista de Clientes</h4>
@@ -24,26 +25,9 @@
                         </div>
 
                     </div>
-<<<<<<< HEAD
-=======
-                	</div>
-                <!--EL BUSCAR -->
-                <div class="col-md-12">
-                    <g:form action="list" class="form-search">
-                        <div class="input-group col-md-4">
-                            <input type="text" name="text" class="form-control" maxlength="50" value="${text}"
-                                   placeholder="Buscar" /> <span
-                                class="input-group-btn">
-                            <button class="btn btn-info" name="list" value="Buscar">
-                                <span class=" glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                        </div>
-                    </g:form>
-                </div>
-                <!--END BUSCAR -->
-                    <div class="row">
->>>>>>> eda329afa484f2a869bd0b1eb27eba218f3f7fdb
+
+
+
                     ${tom}
 
                         	<table id="list-cliente" class="table table-striped table-advance table-hover" cellspacing="0"
@@ -88,10 +72,9 @@
                                 
 								</tbody>
 						</table>
-						<div class="pagination">
-                            <g:render template="/layouts/paginate"/>
-						</div>
-        	</div>
+
+
+                </div>
     	  </div>
 
         </div>

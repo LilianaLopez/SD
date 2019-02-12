@@ -40,7 +40,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>BIBLIOTECA - TOMCAT 2 </b></a>
+            <a href="index.html" class="logo"><b>BIBLIOTECA - TOMCAT 1 </b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -222,41 +222,7 @@
                       </ul>
                   </li>
                   
-                  <li class="sub-menu">
-                      <a href="index.html">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Prestamos</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="${request.contextPath}/theme/general.html">General</a></li>
-                          <li><a  href="${request.contextPath}/theme/buttons.html">Buttons</a></li>
-                          <li><a  href="${request.contextPath}/theme/panels.html">Panels</a></li>
-                      </ul>
-                  </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>Reservas</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="${request.contextPath}/theme/general.html">General</a></li>
-                          <li><a  href="${request.contextPath}/theme/buttons.html">Buttons</a></li>
-                          <li><a  href="${request.contextPath}/theme/panels.html">Panels</a></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Prestamos</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="${request.contextPath}/theme/calendar.html">Calendar</a></li>
-                          <li><a  href="${request.contextPath}/theme/gallery.html">Gallery</a></li>
-                          <li><a  href="${request.contextPath}/theme/todo_list.html">Todo List</a></li>
-                      </ul>
-                  </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
@@ -275,7 +241,7 @@
                           <span>Salidas</span>
                       </a>
                       <ul class="sub">
-                      	  <li><a  href="/Sistema-Biblioteca/salida/create">Listar Salidas</a></li>
+                      	  <li><a  href="/Sistema-Biblioteca/salida">Listar Salidas</a></li>
                       	  <li><a  href="/Sistema-Biblioteca/salida/create">Crear Salida</a></li>
                           <li><a  href="/Sistema-Biblioteca/motivoSalida/create">Crear Motivo de Salida</a></li>
                           <li><a  href="/Sistema-Biblioteca/motivoSalida/list">Listar Motivos</a></li>
@@ -293,15 +259,23 @@
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Reportes</span>
+                          <i class="fa fa-th"></i>
+                          <span>Contacto</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="#">Morris</a></li>
-                          <li><a  href="#">Chartjs</a></li>
+                          <li><a  href="/Sistema-Biblioteca/contacto/create">Enviar mensaje</a></li>
                       </ul>
                   </li>
-
+              <li class="sub-menu">
+                  <a href="javascript:;" >
+                      <i class="fa fa-th"></i>
+                      <span>Clientes</span>
+                  </a>
+                  <ul class=" sub">
+                      <li><a  href="/Sistema-Biblioteca/cliente">Lista de clientes</a></li>
+                      <li><a  href="/Sistema-Biblioteca/cliente/create">Agregar clientes</a></li>
+                  </ul>
+              </li>
               </ul>
               <!-- sidebar menu end-->
           </div>

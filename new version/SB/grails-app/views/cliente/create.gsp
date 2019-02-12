@@ -52,6 +52,7 @@
 		</div>
 		</div>
 	</div>
+	<asset:javascript src="jquery-1.8.3.min.js"/>
 		<script type="text/javascript">
 		$(document).on('click','#invitacion:checked',function(e){
 			$('#invitacion').prop('value', true);

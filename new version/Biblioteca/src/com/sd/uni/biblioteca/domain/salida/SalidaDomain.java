@@ -42,7 +42,7 @@ public class SalidaDomain extends BaseDomain {
 	@Column(name = "id", nullable = false, unique = true)
 	private Integer _id;
 	
-	@Column(name = "fecha", nullable = false, unique = true)
+	@Column(name = "fecha", nullable = false, unique = false)
 	private Date _fecha;
 
 	@Column(name = "descripcion", nullable = false, unique = false)

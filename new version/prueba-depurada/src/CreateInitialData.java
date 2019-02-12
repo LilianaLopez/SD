@@ -53,7 +53,7 @@ public class CreateInitialData {
 		user.setUsername("admin");
 		user.setPassword("admin");
 		user.setAccountLocked("true");
-		user.setName("Florinda Meza");
+		user.setName("Marcos Gonzalez");
 		user.setType("Empleado");
 		user.setRolesIds(rolesIds);
 		
@@ -66,7 +66,7 @@ public class CreateInitialData {
 		user.setUsername("secretary");
 		user.setPassword("secretary");
 		user.setAccountLocked("true");
-		user.setName("DoÃ±a Clotilde");
+		user.setName("María Pedrozo");
 		user.setType("Empleado");
 		user.setRolesIds(rolesIds);
 		client.resource(BASE_URL + "/user").entity(user).post(UserDTO.class);

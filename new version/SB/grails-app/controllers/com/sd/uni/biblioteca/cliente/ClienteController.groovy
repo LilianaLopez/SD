@@ -24,7 +24,7 @@ class ClienteController {
 		}
 		
 		//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
-	def list(Integer max) {
+	/*def list(Integer max) {
 		def page = 0
 		def next
 		if(null != params.get("page")){
@@ -52,7 +52,18 @@ class ClienteController {
 		[clienteInstanceList: clientes, clienteInstanceTotal: clientes.size(), page: page, next: next.size(),
 		 text: text, user:authService.getUsername()]
 	}
-		
+	*/
+
+	def list(Integer max) {
+		def clientes = clienteService.getAll()
+		//	def tom = clienteService.getTom()
+
+		[clienteInstanceList: clientes, clienteInstanceTotal: clientes.size()]
+
+	}
+
+
+
 		//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 		def create() {
 			

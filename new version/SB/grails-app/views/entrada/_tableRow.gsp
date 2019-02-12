@@ -3,7 +3,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 col-sm-2 control-label">Libro*</label>
 				<div class="col-sm-10">
-					<g:select class="form-control" id="libro"  name="${libro}" from="${libros}" optionKey="id" optionValue="nombre" required=""/>
+					<g:select class="form-control" id="libro"  name="${libro}" from="${libros}"  optionKey="id" optionValue="nombre" required=""/>
 				</div>
 		</div>
 
@@ -14,7 +14,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 col-sm-2 control-label">Cantidad*</label>
 			<div class="col-sm-10">	
-				<g:textField class="form-control"  name="${cantidad}"  required=""/>
+				<g:textField class="form-control"  placeholder="Cantidad" maxlength="5"  type = "number" name="${cantidad}"  required="true"/>
 			</div>
 		</div>
 	

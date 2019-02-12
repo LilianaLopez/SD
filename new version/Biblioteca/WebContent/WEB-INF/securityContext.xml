@@ -20,6 +20,7 @@
     	<sec:intercept-url pattern="/rest/contacto/**" access="permitAll()"/>
     	<sec:intercept-url pattern="/rest/contacto/**" access="permitAll()"/>
     	<sec:intercept-url pattern="/rest/salida/**" access="permitAll()"/>
+    	<sec:intercept-url pattern="/rest/motivoSalida/**" access="permitAll()"/>
     	<sec:intercept-url pattern="/rest/salidaDetalle/**" access="permitAll()"/>
     	 
     	<!-- Nota: la url a user solo se habilita para crear datos básicos en la bd, en produccion no se necesita y seria un hueco a de seguridad

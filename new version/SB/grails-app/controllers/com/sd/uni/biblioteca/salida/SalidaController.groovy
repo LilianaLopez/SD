@@ -26,7 +26,7 @@ class SalidaController {
 	def IMotivoSalidaService motivoSalidaService=new MotivoSalidaServiceImpl()
 	def ISalidaDetalleService salidaDetalleService=new SalidaDetalleServiceImpl()
 	
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 	def index() {
 		salidaService=new SalidaServiceImpl()
 		def salidas = salidaService.getAll()
@@ -34,12 +34,12 @@ class SalidaController {
 		
 	}
 	
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 	def create() {
 		[salidaInstance: new SalidaB(params), motivoSalidas: motivoSalidaService.getAll()]
 	}
 
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 	def save() {
 		def newSalida = new SalidaB(params)
 		newSalida.setMotivoSalida(motivoSalidaService.getById(Integer.valueOf(params.motivoSalidaId)))
@@ -53,9 +53,11 @@ class SalidaController {
 		for (int i = 0; i < maxi; i++) {
 			def libro= libroService.getById(Integer.parseInt(params.get("libro["+i.toString()+"]")))
 			def cantidad = Integer.parseInt(params.get("cantidad["+i.toString()+"]"))
+			System.out.println( "Cantidadddd /"+"cantidad["+i.toString()+"]")
+			System.out.println( "cant /"+cantidad)
 			def salidaDetalleInstance = new SalidaDetalleB(params)
 			def antCantidad= salidaDetalleInstance.getCantidad()
-			salidaDetalleInstance.setCantidad( cantidad)
+			salidaDetalleInstance.setCantidad(cantidad)
 			salidaDetalleInstance.setSalida( salidaInstance)
 			salidaDetalleInstance.setLibro(libro)
 			def salidaDetalles = salidaDetalleService.save(salidaDetalleInstance)
@@ -73,7 +75,7 @@ class SalidaController {
 		redirect(action: "show", id: salidaInstance.getId())
 	}
 	
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 	def show(Long id) {
 		def salidaInstance = salidaService.getById(id.intValue())
 		if (!salidaInstance) {
@@ -88,16 +90,16 @@ class SalidaController {
 		[salidaInstance: salidaInstance, salidaDetalles: salidaDetalleService.getAll()]
 	}
 	
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 	def newRow(){
 		def idN =  params.get("id")
 		def cant = "cantidad["+ idN + "]"
 		def libro = "libro["+ idN + "]"
-		render(template: 'tableRow', model: [ idNew: idN, , cantidad: cant,  libro: libro, libros: libroService.getAll() ])
+		render(template: 'tableRow', model: [ idNew: idN, cantidad: cant,  libro: libro, libros: libroService.getAll() ])
 		
 	}
 	
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 	def edit(Long id) {
 		def salidaInstance = salidaService.getById(id.intValue())
 		if (!salidaInstance) {
@@ -113,7 +115,7 @@ class SalidaController {
 	}
 
 	
-	@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
+	//@Secured(['ROLE_SUPERUSER', 'ROLE_ADMIN'])
 	def update(Long id) {
 		def salidaInstance = salidaService.getById(id.intValue())
 		salidaInstance.setDescripcion(params.get("descripcion"))

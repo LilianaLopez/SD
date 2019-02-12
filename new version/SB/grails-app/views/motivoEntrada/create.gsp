@@ -12,6 +12,13 @@
         <div class="container-fluid">
         	<div class="row mt">
         		<div class="col-lg-12">
+					<g:hasErrors bean="${motivoEntradaInstance}">
+						<ul class="errors" role="alert">
+							<g:eachError bean="${motivoEntradaInstance}" var="error">
+								<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+							</g:eachError>
+						</ul>
+					</g:hasErrors>
 	            	<div class="form-panel">		
 	                	<div class="panel-heading">
 							<h4><strong>Registrar</strong></h4>

@@ -35,7 +35,6 @@
 	  	<div class="container">
 	  	
 		      <form class="form-login" action='${postUrl}' method='POST' id='loginForm' autocomplete='off'>
-                  ${postUrl}
                   <h2 class="form-login-heading">Iniciar Sesión</h2>
 		        <g:if test='${flash.message}'>
 					<div class='login_message'>${flash.message = "Usuario y/o Contraseña incorrectos."}</div>

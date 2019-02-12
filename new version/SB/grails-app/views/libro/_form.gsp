@@ -5,7 +5,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 col-sm-2 control-label">Nombre*</label>
 			<div class="col-sm-10">
-				<g:textField class="form-control" required="" name="nombre" value="${libroInstance?.nombre }"/>
+				<g:textField type="text" maxlength="100"  placeholder=" Ingrese el nombre"  class="form-control" required="" name="nombre" value="${libroInstance?.nombre }"/>
 			</div>
 		</div>
 	</div>
@@ -14,7 +14,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 col-sm-2 control-label">Año*</label>
 			<div class="col-sm-10">
-				<g:textField class="form-control" required="" name="anho" value="${libroInstance?.anho }"/>
+				<g:textField  class="form-control" type="number" maxlength="4" placeholder=" Año del libro" required="true" name="anho" value="${libroInstance?.anho }"/>
 			</div>
 		</div>
 	</div>
@@ -43,7 +43,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 col-sm-2 control-label">Cantidad*</label>
 			<div class="col-sm-4">
-				<g:textField class="form-control" required="" name="cantidad" value="${libroInstance?.cantidad }" disabled="${mode == 'edit'}"/>
+				<g:textField type="number" maxlength="50" class="form-control" placeholder="Ingrese la cantidad"  required="true" name="cantidad" value="${libroInstance?.cantidad }" disabled="${mode == 'edit'}"/>
 			</div>
 		</div>
 	</div>

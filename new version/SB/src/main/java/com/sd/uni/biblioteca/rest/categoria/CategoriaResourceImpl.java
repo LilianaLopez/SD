@@ -53,7 +53,7 @@ public class CategoriaResourceImpl extends BaseResourceImpl<CategoriaDTO> implem
 	@Override
 	public CategoriaResult find(String textToFind, int maxItems, int page){
 		setWebResourceBasicAuthFilter();
-		CategoriaResult categorias = search(textToFind, maxItems,page).get(CategoriaResult.class);
+		CategoriaResult categorias =  findWR(textToFind, maxItems,page).get(CategoriaResult.class);
 		
 		return categorias;
 	}

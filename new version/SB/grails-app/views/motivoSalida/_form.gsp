@@ -5,7 +5,7 @@
 		<div class="form-group">
 			<label class="col-sm-3 control-label">Descripcion*</label>
 			<div class="col-sm-9">
-				<g:textField class="form-control" required="" name="descripcion" value="${motivoSalidaInstance?.descripcion }"/>
+				<g:textField class="form-control" placeholder="Ingrese el motivo" maxlength="50" required = "true" type = "text" name="descripcion" value="${motivoSalidaInstance?.descripcion }"/>
 			</div>
 		</div>
 	</div>
